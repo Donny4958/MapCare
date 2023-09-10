@@ -1,0 +1,17 @@
+C:\Users\juanp\source\repos\MapCare\MapCare\bin\Debug\net6.0\MapCare.exe
+C:\Users\juanp\source\repos\MapCare\MapCare\bin\Debug\net6.0\MapCare.deps.json
+C:\Users\juanp\source\repos\MapCare\MapCare\bin\Debug\net6.0\MapCare.runtimeconfig.json
+C:\Users\juanp\source\repos\MapCare\MapCare\bin\Debug\net6.0\MapCare.dll
+C:\Users\juanp\source\repos\MapCare\MapCare\bin\Debug\net6.0\MapCare.pdb
+C:\Users\juanp\source\repos\MapCare\MapCare\bin\Debug\net6.0\HtmlAgilityPack.dll
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\MapCare.csproj.AssemblyReference.cache
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\MapCare.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\MapCare.AssemblyInfoInputs.cache
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\MapCare.AssemblyInfo.cs
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\MapCare.csproj.CoreCompileInputs.cache
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\MapCare.csproj.CopyComplete
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\MapCare.dll
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\refint\MapCare.dll
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\MapCare.pdb
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\MapCare.genruntimeconfig.cache
+C:\Users\juanp\source\repos\MapCare\MapCare\obj\Debug\net6.0\ref\MapCare.dll

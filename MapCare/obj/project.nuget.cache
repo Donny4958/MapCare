@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "BwWKfAN6zE+wKoXGd5VssQS8Uqpuu02pVcbbAAjXbCNBWyVkrIe1HuCgXeT3Cu64uBL1wWJBCDB5k7QyzPW7fA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\juanp\\source\\repos\\MapCare\\MapCare\\MapCare.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\juanp\\.nuget\\packages\\htmlagilitypack\\1.11.53\\htmlagilitypack.1.11.53.nupkg.sha512"
+  ],
+  "logs": []
+}
