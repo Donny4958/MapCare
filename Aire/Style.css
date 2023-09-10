@@ -1,0 +1,77 @@
+.box {
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+ left: 25vw;
+  height:100%;
+}
+.table-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 70%; 
+    width: 25vw; 
+    overflow-y: auto; 
+}
+.img-container {
+    position: absolute;
+    top: 80%; /* Se ajusta para empezar después del 80% del alto, dejando espacio para el link */
+    left: 0px;
+    height: 20%; 
+    width: 25vw;
+}
+.link-container {
+    position: absolute;
+    top: 90%; /* Empieza después del .img-container */
+    left: 0px;
+    height: 10%;
+    width: 25vw;
+    text-align: center; /* Centra el enlace horizontalmente */
+    line-height: 2; /* Esto puede ayudar a centrar el enlace verticalmente, pero puede requerir ajustes según el diseño exacto */
+}
+
+
+
+table {
+    width: 100%;
+position:absolute;
+  top:0px;
+  left:0px;
+  max-height: 90vh; 
+  width: 25vw; 
+  overflow-y: auto;
+}
+td {
+	 padding: 2%;
+	background-color: rgba(0,0,0,0.1);
+	
+}
+
+th {
+	text-align: center;
+	color: #ffffff;
+	padding: 2%;
+	background-color: rgba(0,0,0,0.1);
+}
+th {
+		background-color: #55608f;
+	}
+tr {
+		&:hover {
+			background-color: rgba(0,0,0,0.4);
+		}
+	}
+table, th, td {
+    font-size: 16px;
+}
+@media only screen and (max-width: 768px) {
+    table, th, td {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    table, th, td {
+        font-size: 8px;
+    }
+}
