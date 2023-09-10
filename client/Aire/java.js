@@ -8,11 +8,8 @@ var map = L.map('map', {
     minZoom: 4,
     maxBounds: bounds,
     maxBoundsViscosity: 1.0
-
 });
-
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-   
     maxZoom: 19
 }).addTo(map);
 let dataGlobal; 
@@ -25,7 +22,7 @@ fetch('php.php')
             .then(response => response.json())
             .then(geojsonData => {
                 L.geoJson(geojsonData, {
-                    style: function(feature) {
+                    style: function(feature) {						
                         var densidad = data[feature.properties.NAME];
                         return {
                             fillColor: getColor(densidad),
@@ -33,7 +30,7 @@ fetch('php.php')
                             opacity: 1,
                             color: 'black',
                             dashArray: '3',
-                            fillOpacity: 0.8
+                            fillOpacity: 0.9
                         };
                     },
                     onEachFeature: onEachFeature
@@ -44,13 +41,24 @@ fetch('php.php')
     });
 
 function getColor(densidad) {
-    return densidad == 'Excelente' ? '#3A5AFC' :
-           densidad == 'Bueno'  ? '#5032D9' :
-           densidad == 'Regular'  ? '#9F43F0' :
-           densidad == 'Malo'   ? '#C632D9' :
-           densidad == 'Horrible'   ? '#FA2A9F' :
+    return densidad == "Good" ? '#3A5AFC' :
+           densidad == "Moderate"  ? '#DE793A' :
+           densidad == "Bad"  ? '#EA324F' :
                               '#FFFFFF';
 }
+function getMessage(densidad) {
+    switch (densidad) {
+        case "Good":
+            return "<br>The air quality is good, but stay informed.";
+        case "Moderate":
+            return "<br>The air quality is acceptable, but there might be a risk for some people.";
+        case "Bad":
+            return "<br>The air quality is bad, exercise caution when going outside.";
+        default:
+            return "<br>No records available for this status.";
+    }
+}
+
 
 function updateTable(data) {
     const tbody = document.getElementById('dataBody');
@@ -85,20 +93,13 @@ function resetHighlight(e) {
 
 
 function onEachFeature(feature, layer) {
-    const densidad = dataGlobal[feature.properties.NAME];
-
+    const calidad = dataGlobal[feature.properties.NAME];
+    const mensajeAdicional = getMessage(calidad);
+    const mensaje = `The quality of the air is: ${calidad}${mensajeAdicional}`;
     
-    const mensaje = `El estado es: ${feature.properties.NAME} y su calidad es ${densidad}`;
-
-   
     layer.bindTooltip(mensaje);
-
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight
     });
-	
 }
-
-
-

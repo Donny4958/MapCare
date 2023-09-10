@@ -8,9 +8,7 @@ var map = L.map('map', {
     minZoom: 4,
     maxBounds: bounds,
     maxBoundsViscosity: 1.0
-
 });
-
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19
 }).addTo(map);
@@ -32,7 +30,7 @@ fetch('php.php')
                             opacity: 1,
                             color: 'black',
                             dashArray: '3',
-                            fillOpacity: 0.8
+                            fillOpacity: .9
                         };
                     },
                     onEachFeature: onEachFeature
@@ -43,12 +41,20 @@ fetch('php.php')
     });
 
 function getColor(densidad) {
-    return densidad > 600000 ? '#3A5AFC' :
-           densidad > 350000  ? '#5032D9' :
-           densidad > 150000  ? '#9F43F0' :
-           densidad > 82000   ? '#C632D9' :
-           densidad > 0   ? '#FA2A9F' :
+    return densidad > 10000000 ? '#3A5AFC' :
+           densidad > 5000000  ? '#5032D9' :
+           densidad > 1000000  ? '#9F43F0' :
+           densidad > 500000   ? '#C632D9' :
+           densidad > 100000   ? '#FA2A9F' :
                               '#FFFFFF';
+}
+function getMessage(densidad) {
+    if (densidad > 10000000) return "<br>Be careful with this amount, it's very high. Avoid crowded places.";
+    if (densidad > 5000000) return "<br>The amount is significant. Wear a mask and keep your distance.";
+    if (densidad > 1000000) return "<br>Stay alert and follow health recommendations.";
+    if (densidad > 500000) return "<br>Follow standard precautionary measures.";
+    if (densidad > 100000) return "<br>Even though the amount is low, keep taking precautions.";
+    return "<br>No records available for this status.";
 }
 
 function updateTable(data) {
@@ -85,11 +91,8 @@ function resetHighlight(e) {
 
 function onEachFeature(feature, layer) {
     const densidad = dataGlobal[feature.properties.NAME];
-
-    
-    const mensaje = `El estado es: ${feature.properties.NAME} y su cantidad es de ${densidad}`;
-
-   
+    const mensajeAdicional = getMessage(densidad);
+    const mensaje = `Total cases of covid: ${densidad}${mensajeAdicional}`;
     layer.bindTooltip(mensaje);
 
     layer.on({
@@ -97,6 +100,3 @@ function onEachFeature(feature, layer) {
         mouseout: resetHighlight
     });
 }
-
-
-

@@ -16,20 +16,32 @@
 }
 .img-container {
     position: absolute;
-    top: 80%; /* Se ajusta para empezar después del 80% del alto, dejando espacio para el link */
+    top: 70%; /* Empieza después de .table-container */
     left: 0px;
-    height: 20%; 
+    height: 6%; 
     width: 25vw;
 }
+
 .link-container {
     position: absolute;
-    top: 90%; /* Empieza después del .img-container */
+    top: 76%; /* Empieza después del .img-container */
     left: 0px;
-    height: 10%;
+    height: 3%;
     width: 25vw;
-    text-align: center; /* Centra el enlace horizontalmente */
-    line-height: 2; /* Esto puede ayudar a centrar el enlace verticalmente, pero puede requerir ajustes según el diseño exacto */
+    text-align: center; 
+    line-height: 2;
 }
+.text-container {
+    position: absolute;
+    top: 79%; /* Empieza después del .link-container */
+    left: 0px;
+    height: 21%;
+    width: 25vw;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Agrega un scrollbar si el texto es demasiado largo */
+}
+
 
 
 

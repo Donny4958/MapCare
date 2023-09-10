@@ -12,8 +12,7 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
 $pdo = new PDO($dsn, $user, $pass, $options);
-
-$stmt = $pdo->query("SELECT estado, cantidad FROM covid");
+$stmt = $pdo->query("SELECT estado, temp FROM temperatura");
 $data = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
 
 header('Content-Type: application/json');
